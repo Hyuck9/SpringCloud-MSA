@@ -1,0 +1,27 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: order-service
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/msa
+    username: msa
+    password: passw0rd
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+eureka:
+  instance:
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+
+logging:
+  level:
+    com.example.com.example.orderservice: DEBUG
