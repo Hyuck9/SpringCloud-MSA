@@ -22,7 +22,7 @@ import static org.springframework.http.HttpStatus.OK;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/user-service")
+@RequestMapping("/")
 public class UserController {
 
     private final Environment env;
