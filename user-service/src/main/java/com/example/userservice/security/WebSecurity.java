@@ -29,7 +29,7 @@ public class WebSecurity {
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
     private final Environment env;
 
-    public static final String ALLOWED_IP_ADDRESS = "127.0.0.1";
+    public static final String ALLOWED_IP_ADDRESS = "192.168.0.14";
     public static final String SUBNET = "/32";
     public static final IpAddressMatcher ALLOWED_IP_ADDRESS_MATCHER = new IpAddressMatcher(ALLOWED_IP_ADDRESS + SUBNET);
 
@@ -46,6 +46,7 @@ public class WebSecurity {
                         .requestMatchers("/**").access(this::hasIpAddress)
                         .anyRequest().authenticated()
                 )
+                .authenticationManager(authenticationManager)
                 .addFilter(getAuthenticationFilter(authenticationManager))
                 .headers((headers) -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
                 .build();
