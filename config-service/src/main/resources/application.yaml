@@ -8,4 +8,7 @@ spring:
     config:
       server:
         git:
-          uri: file:///C://Dev//Projects//Study//inflearn//git-local-repo
+#          uri: file:///C://Dev//Projects//Study//inflearn//git-local-repo
+          uri: https://github.com/Hyuck9/spring-cloud-config
+#          username: [my username]
+#          password: [my password]
