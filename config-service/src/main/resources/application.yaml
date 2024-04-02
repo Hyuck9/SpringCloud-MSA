@@ -4,9 +4,13 @@ server:
 spring:
   application:
     name: config-service
+  profiles:
+    active: native
   cloud:
     config:
       server:
+        native:
+          search-locations: file:///C://Dev//Projects//Study//inflearn//git-local-repo
         git:
 #          uri: file:///C://Dev//Projects//Study//inflearn//git-local-repo
           uri: https://github.com/Hyuck9/spring-cloud-config
