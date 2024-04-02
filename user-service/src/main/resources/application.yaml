@@ -9,11 +9,11 @@ spring:
     port: 5672
     username: guest
     password: guest
-  datasource:
-    driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/msa
-    username: msa
-    password: passw0rd
+#  datasource:
+#    driver-class-name: org.mariadb.jdbc.Driver
+#    url: jdbc:mariadb://localhost:3306/msa
+#    username: msa
+#    password: passw0rd
   jpa:
     open-in-view: true
     hibernate:
