@@ -43,6 +43,7 @@ public class WebSecurity {
         return http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((requests) -> requests
+                        .requestMatchers("/actuator/**").permitAll()
                         .requestMatchers("/**").access(this::hasIpAddress)
                         .anyRequest().authenticated()
                 )
